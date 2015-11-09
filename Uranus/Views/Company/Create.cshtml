@@ -1,76 +1,131 @@
 ﻿@model Uranus.Domain.Entities.Company
 
 @{
-    ViewBag.Title = "Create Company";
+    ViewBag.Title = "Create";
 }
-<div class="container">
-    <div class="row">
-        <h2>Create</h2>
-    </div>
 
+<h2>Create</h2>
 
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Company</h4>
         <hr />
         @Html.ValidationSummary(true)
-        <div class="row">
-            <div class="form-group col-lg-4 col-lg-4">
-                @Html.LabelFor(model => model.CompanyName)
-
-                @Html.TextBoxFor(model => model.CompanyName, new { @class = "form-control" })
-
-
-            </div>
-
-            <div class="form-group col-lg-4">
-                @Html.LabelFor(model => model.CompanyType)
-
-                @Html.TextBoxFor(model => model.CompanyType, new { @class = "form-control" })
-
-
-            </div>
-
-            <div class="form-group col-lg-4">
-                @Html.LabelFor(model => model.CompanyAddress)
-                @Html.TextBoxFor(model => model.CompanyAddress, new { @class = "form-control" })
-
-
-            </div>
-
-            <div class="form-group col-lg-4">
-                @Html.LabelFor(model => model.EmaildId)
-                @Html.TextBoxFor(model => model.EmaildId, new { @class = "form-control" })
-            </div>
-            <div class="form-group col-lg-4">
-                @Html.LabelFor(model => model.ContactNo)
-                @Html.TextBoxFor(model => model.ContactNo, new { @class = "form-control" })
-            </div>
-
-            <div class="form-group col-lg-4">
-                @Html.LabelFor(model => model.BusinessHours)
-                @Html.TextBoxFor(model => model.BusinessHours, new { @class = "form-control" })
-            </div>
-
-            <div class="form-group col-lg-4">
-                @Html.LabelFor(model => model.FacebookLink)
-                @Html.TextBoxFor(model => model.FacebookLink, new { @class = "form-control" })
-
-            </div>
-
-            <div class="clearfix"></div>
-            <div class="form-group col-lg-12">
-                <input type="hidden" value="contact" name="save">
-                <input type="submit" value="Create" class="btn btn-primary" />
-
-            </div>
-
-            <div class="clearfix"></div>
-            <div class="form-group col-lg-12">
-                @Html.ActionLink("Back to List", "Index")
+        <div class="form-group">
+            @Html.LabelFor(model => model.CompanyName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CompanyName)
+                @Html.ValidationMessageFor(model => model.CompanyName)
             </div>
         </div>
 
-    }
+        <div class="form-group">
+            @Html.LabelFor(model => model.CompanyType, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CompanyType)
+                @Html.ValidationMessageFor(model => model.CompanyType)
+            </div>
+        </div>
 
+        <div class="form-group">
+            @Html.LabelFor(model => model.CompanyAddress, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CompanyAddress)
+                @Html.ValidationMessageFor(model => model.CompanyAddress)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EmaildId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EmaildId)
+                @Html.ValidationMessageFor(model => model.EmaildId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ContactNo, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ContactNo)
+                @Html.ValidationMessageFor(model => model.ContactNo)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Address)
+                @Html.ValidationMessageFor(model => model.Address)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.BusinessHours, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.BusinessHours)
+                @Html.ValidationMessageFor(model => model.BusinessHours)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FacebookLink, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FacebookLink)
+                @Html.ValidationMessageFor(model => model.FacebookLink)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.LinkedInLink, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.LinkedInLink)
+                @Html.ValidationMessageFor(model => model.LinkedInLink)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TwitterLink, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TwitterLink)
+                @Html.ValidationMessageFor(model => model.TwitterLink)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.WebsiteLink, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.WebsiteLink)
+                @Html.ValidationMessageFor(model => model.WebsiteLink)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Description)
+                @Html.ValidationMessageFor(model => model.Description)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ImageLogo, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ImageLogo)
+                @Html.ValidationMessageFor(model => model.ImageLogo)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
 </div>

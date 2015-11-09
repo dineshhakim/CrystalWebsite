@@ -30,6 +30,8 @@ namespace Uranus.Data.Infrastucture
         public DbSet<OrderDemo> OrderDemo { get; set; }
 
         public DbSet<User> Users { get; set; }
+
+        public DbSet<Clients> Clients { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();

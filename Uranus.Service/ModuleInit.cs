@@ -23,6 +23,8 @@ namespace Uranus.Service
             registrar.RegisterType<IOrderDemoService, OrderDemoService>();
             registrar.RegisterType<IUserService, UserService>();
             registrar.RegisterType<IFeaturesService, FeatureService>();
+
+            registrar.RegisterType<IClientService, ClientService>();
         }
     }
 }

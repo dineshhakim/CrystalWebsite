@@ -24,12 +24,48 @@ namespace Uranus.Domain.Entities
         public string ContactNo { get; set; }
         [Column(TypeName = "VARCHAR")]
         [StringLength(50)]
+        public string Address { get; set; }
+        [Column(TypeName = "VARCHAR")]
+        [StringLength(50)]
         public string BusinessHours { get; set; }
         [Column(TypeName = "VARCHAR")]
         [StringLength(50)]
         public string FacebookLink { get; set; }
+        [Column(TypeName = "VARCHAR")]
+        [StringLength(50)]
+        public string LinkedInLink { get; set; }
+        [Column(TypeName = "VARCHAR")]
+        [StringLength(50)]
+        public string TwitterLink { get; set; }
+        [Column(TypeName = "VARCHAR")]
+        [StringLength(50)]
+        public string WebsiteLink { get; set; }
+        [Column(TypeName = "NVARCHAR")]
+        [StringLength(1000)]
+        public string Description { get; set; }
+        [Column(TypeName = "VARCHAR")]
+        [StringLength(50)]
+        public string ImageLogo { get; set; }
+        [Column(TypeName = "VARCHAR")]
+        [StringLength(50)]
+        public string ImageSavePath { get; set; }
 
-         
+        [Column(TypeName = "VARCHAR")]
+        [StringLength(50)]
+        public string CopyRight { get; set; }
+        public Company()
+        {
+            CompanyName = "Crystal Pvt. Ltd.";
+            ImageLogo = "logo.jpg";
+            ImageSavePath = "~/Images/";
+            ContactNo = "9999999";
+            Address = "Albany, CA, USA";
+            CopyRight = System.DateTime.Now.Year + "-" + "All Rights Reserved";
+            FacebookLink = "www.facebook.com";
+            LinkedInLink = "www.linkedin.com";
+            Description = "This company is great for finding great crystals that you are searching";
+        }
+
 
     }
 }

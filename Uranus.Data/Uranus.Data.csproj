@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IClientRepository.cs" />
     <Compile Include="Abstract\ICompanyRepository.cs" />
     <Compile Include="Abstract\IContactUsRepository.cs" />
     <Compile Include="Abstract\ICustomerRepository.cs" />
@@ -65,6 +66,7 @@
     <Compile Include="Abstract\IProductRepository.cs" />
     <Compile Include="Abstract\ITeamMemberRepository.cs" />
     <Compile Include="Abstract\IUserRepository.cs" />
+    <Compile Include="Implementation\ClientRepository.cs" />
     <Compile Include="Implementation\CompanyRepository.cs" />
     <Compile Include="Implementation\ContactUsRepository.cs" />
     <Compile Include="Implementation\CustomerRepository.cs" />

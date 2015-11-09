@@ -17,7 +17,6 @@ namespace Uranus.Controllers
         public CompanyController(ICompanyService companyService)
         {
             this.CompanyService = companyService;
-
         }
 
         //

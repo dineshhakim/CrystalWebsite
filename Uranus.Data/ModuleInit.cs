@@ -24,6 +24,8 @@ namespace Uranus.Data
             registrar.RegisterTypeWithContainerControlledLife<IOrderDemoRepository, OrderDemoRepository>();
             registrar.RegisterType<IUserRepository, UserRepository>();
             registrar.RegisterType<IFeaturesRepository, FeaturesRepository>();
+
+            registrar.RegisterType<IClientRepository, ClientRepository>();
         }
     }
 

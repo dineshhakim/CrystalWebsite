@@ -4,63 +4,102 @@
     ViewBag.Title = "Index";
 }
 
+<h2>Index</h2>
 
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CompanyName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompanyType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompanyAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmaildId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BusinessHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FacebookLink)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LinkedInLink)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TwitterLink)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WebsiteLink)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImageLogo)
+        </th>
+        <th></th>
+    </tr>
 
-<div class="container">
-    <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">
-                Company
-                <small>Index</small>
-            </h1>
-            <ol class="breadcrumb">
-                <li>
-                    @Html.ActionLink("Home", "Index", "Home")
-                </li>
-                <li class="active">Company</li>
-            </ol>
-        </div>
-    </div>
-    <div class="row">
-        <p>
-            @Html.ActionLink("Create New", "Create")
-        </p>
-        <table class="table">
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.CompanyName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.CompanyType)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.CompanyAddress)
-                </th>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompanyName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompanyType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompanyAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmaildId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContactNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BusinessHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FacebookLink)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LinkedInLink)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TwitterLink)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WebsiteLink)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ImageLogo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
 
-                <th></th>
-            </tr>
-
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.CompanyName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.CompanyType)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.CompanyAddress)
-                    </td>
-
-                    <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-                    </td>
-                </tr>
-            }
-
-        </table>
-    </div>
-</div>
+</table>

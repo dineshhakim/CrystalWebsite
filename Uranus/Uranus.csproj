@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -164,6 +165,7 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\ClientsController.cs" />
     <Compile Include="Controllers\CompanyController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
@@ -570,6 +572,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Context\" />
     <Folder Include="ViewModels\" />
+    <Folder Include="Views\Client\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -638,6 +641,8 @@
     <Content Include="Views\Product\Delete.cshtml" />
     <Content Include="Views\Customer\Delete.cshtml" />
     <Content Include="Views\Team\Delete.cshtml" />
+    <Content Include="Views\Clients\Index.cshtml" />
+    <Content Include="Views\Clients\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

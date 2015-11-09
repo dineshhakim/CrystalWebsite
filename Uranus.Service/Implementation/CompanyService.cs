@@ -24,7 +24,7 @@ namespace Uranus.Service.Implementation
             unitOfWork.Commit();
             return entity;
         }
-
+      
 
         public Company Update(Company entity)
         {
