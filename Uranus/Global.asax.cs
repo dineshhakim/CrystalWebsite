@@ -1,5 +1,5 @@
 ﻿
-using Microsoft.Practices.Unity;
+
 using System;
 using System.Web.Mvc;
 using System.Web.Optimization;
@@ -12,22 +12,10 @@ namespace Uranus
 {
     public class MvcApplication : System.Web.HttpApplication
     {
-        //[Dependency]
-        // public readonly ICompanyService CompanyService;
-        private ICompanyService companyService;
+        
 
 
-        [Dependency]
-        public ICompanyService CompanyService
-        {
-            get { return companyService; }
-            set
-            {
-                if (value == null)
-                    throw new ArgumentNullException("value");
-                companyService = value;
-            }
-        }
+        
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
@@ -36,9 +24,9 @@ namespace Uranus
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             UnityConfig.Initialise();
-            // GlobalSetupHelper obj = new GlobalSetupHelper();
-            // obj.SetGlobalSetup();
-            CompanyService.GetAll();
+            //GlobalSetupHelper obj = new GlobalSetupHelper();
+            //obj.SetGlobalSetup();
+           
             //Database.SetInitializer(new ProductDatabaseInitializer());
         }
     }

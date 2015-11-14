@@ -5,7 +5,7 @@ using System.ComponentModel.Composition.Primitives;
 using System.Linq;
 using System.Text;
 using Microsoft.Practices.Unity;
- 
+
 using System.Reflection;
 
 namespace Uranus.Domain
@@ -21,7 +21,7 @@ namespace Uranus.Domain
                 using (var aggregateCatalog = new AggregateCatalog())
                 {
                     aggregateCatalog.Catalogs.Add(dirCat);
-                    
+
                     using (var componsitionContainer = new CompositionContainer(aggregateCatalog))
                     {
                         IEnumerable<Export> exports = componsitionContainer.GetExports(importDef);
@@ -69,7 +69,7 @@ namespace Uranus.Domain
         public void RegisterType<TFrom, TTo>(bool withInterception = false) where TTo : TFrom
         {
             if (withInterception)
-            { 
+            {
                 //register with interception 
             }
             else
@@ -77,26 +77,20 @@ namespace Uranus.Domain
                 this._container.RegisterType<TFrom, TTo>();
             }
         }
-        public void RegisterTypeUsingSetter<TFrom,TTo>(bool withInterception = false) where TTo : TFrom
+        public void RegisterTypeUsingSetter<TFrom>(string setter) where TFrom : class
         {
-            if (withInterception)
-            {
-                //register with interception 
-            }
-            else
-            {
-               // InjectionProperty injectionProperty = new InjectionProperty("ICompanyRepository", "CompanyRepository");
-                this._container.RegisterType<TFrom, TTo>();
 
-              //  this._container.RegisterType<TFrom, TTo>();
-            }
+            InjectionProperty injectionProperty = new InjectionProperty(setter);
+            this._container.RegisterType<TFrom>(injectionProperty);
+
+
         }
 
         public void RegisterTypeWithContainerControlledLife<TFrom, TTo>(bool withInterception = false) where TTo : TFrom
         {
             this._container.RegisterType<TFrom, TTo>(new ContainerControlledLifetimeManager());
             //this._container.RegisterType<ICompanyService, TTo>(new InjectionProperty("CompanyService"));
-                    
+
         }
     }
 }

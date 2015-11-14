@@ -18,13 +18,12 @@ namespace Uranus.Controllers
     public class LoginController : Controller
     {
         public readonly IUserService ObjUserService;
-
+       // public readonly ICompanyService CompanyService;
 
 
         public LoginController(IUserService objUserService)
         {
-            ObjUserService = objUserService;
-
+            ObjUserService = objUserService;        
         }
         //
         // GET: /Login/
@@ -49,6 +48,8 @@ namespace Uranus.Controllers
             if (ObjUserService.CheckLogin(user))
             {
                 SetLoginSession(user);
+                //Need Refractor on this
+                
                 Response.Redirect(FormsAuthentication.DefaultUrl, false);
                 return RedirectToAction("Index", "Home");
             }

@@ -6,7 +6,6 @@ using Uranus.Service.Abstract;
 using Microsoft.Practices.Unity;
 using Uranus.Domain.ViewModels;
 using Uranus.Domain.Entities;
-using Uranus.Service.Implementation;
 
 namespace Uranus.Utility
 {
@@ -29,23 +28,9 @@ namespace Uranus.Utility
         }
         public void SetGlobalSetup()
         {
-
-
-
             var company = new Company();
-            var company1 = companyService.GetAll().FirstOrDefault();
-            //if (company1 != null)
-            //{
-            //    GlobalSetup.Company = company1;
-            //}
-            //else
-            //{
+            var company1 = companyService.GetAll().FirstOrDefault();          
             GlobalSetup.Company = company;
-            //  }
-
-
-
-
 
         }
     }

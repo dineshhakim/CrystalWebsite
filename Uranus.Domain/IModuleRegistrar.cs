@@ -8,7 +8,7 @@ namespace Uranus.Domain
     {
         void RegisterType<TFrom, TTo>(bool withInterception = false) where TTo : TFrom;
 
-        void RegisterTypeUsingSetter<TFrom, TTo>(bool withInterception = false) where TTo : TFrom;
+        void RegisterTypeUsingSetter<TFrom>(string setter) where TFrom : class;
 
         void RegisterTypeWithContainerControlledLife<TFrom, TTo>(bool withInterception = false) where TTo : TFrom;
     }

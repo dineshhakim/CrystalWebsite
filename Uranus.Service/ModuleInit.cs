@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Uranus.Domain;
 using Uranus.Service.Abstract;
 using Uranus.Service.Implementation;
+using Uranus.Service.Utility;
 
 namespace Uranus.Service
 {
@@ -18,8 +19,8 @@ namespace Uranus.Service
             registrar.RegisterType<IContactUsService, ContactUsService>();
             registrar.RegisterType<ITeamMemberService, TeamMemberService>();
             registrar.RegisterType<ICustomerService, CustomerService>();
-            registrar.RegisterTypeUsingSetter<ICompanyService, CompanyService>();
-            
+            registrar.RegisterType<ICompanyService, CompanyService>();
+           
             registrar.RegisterType<IProductService, ProductService>();
             registrar.RegisterType<IOrderDemoService, OrderDemoService>();
             registrar.RegisterType<IUserService, UserService>();

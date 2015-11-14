@@ -40,19 +40,37 @@ namespace Uranus.Service.Implementation
 
         public IEnumerable<Company> GetAll()
         {
-            var company = repository.GetAll();
-            SetGlobalValues(company);
             return repository.GetAll();
+            
         }
         private void SetGlobalValues(IEnumerable<Company> company)
         {
-            var company1 = company.ToList().FirstOrDefault();
-            GlobalSetup.Company = company1;
+            Company company1;
+            if (company.ToList().Count>0)
+            {
+                company1 =   company.ToList().FirstOrDefault();
+            }
+            else
+            {
+                company1 = new Company();
+            }
+            if (GlobalSetup.Company == null)
+            {
+                GlobalSetup.Company = company1;
+            }
+          
         }
 
         public Company GetById(int id)
         {
             return repository.GetById(id);
+        }
+
+        public void SetGlobalSetupOfCompany()
+        {
+            var company = repository.GetAll();
+            SetGlobalValues(company);
+           
         }
     }
 }

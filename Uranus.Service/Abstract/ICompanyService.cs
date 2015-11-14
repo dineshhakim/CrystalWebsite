@@ -4,7 +4,8 @@ namespace Uranus.Service.Abstract
 {
     public interface ICompanyService : IServiceCommand<Company>
     {
-
+          void SetGlobalSetupOfCompany();
+         
     }
 
     

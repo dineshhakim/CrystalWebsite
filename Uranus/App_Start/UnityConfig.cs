@@ -46,7 +46,7 @@ namespace Uranus.App_Start
             //container.RegisterType<IUserData, UserData>();
             //Module initialization thru MEF 
             //Very Important
-            ModuleLoader.LoadContainer(container, ".\\bin", "Uranus.*.dll");
+            ModuleLoader.LoadContainer(container, ".\\bin", "Uranus*.dll");
         }
     }
 }
