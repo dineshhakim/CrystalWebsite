@@ -77,10 +77,26 @@ namespace Uranus.Domain
                 this._container.RegisterType<TFrom, TTo>();
             }
         }
+        public void RegisterTypeUsingSetter<TFrom,TTo>(bool withInterception = false) where TTo : TFrom
+        {
+            if (withInterception)
+            {
+                //register with interception 
+            }
+            else
+            {
+               // InjectionProperty injectionProperty = new InjectionProperty("ICompanyRepository", "CompanyRepository");
+                this._container.RegisterType<TFrom, TTo>();
+
+              //  this._container.RegisterType<TFrom, TTo>();
+            }
+        }
 
         public void RegisterTypeWithContainerControlledLife<TFrom, TTo>(bool withInterception = false) where TTo : TFrom
         {
             this._container.RegisterType<TFrom, TTo>(new ContainerControlledLifetimeManager());
+            //this._container.RegisterType<ICompanyService, TTo>(new InjectionProperty("CompanyService"));
+                    
         }
     }
 }

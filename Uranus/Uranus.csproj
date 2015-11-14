@@ -188,6 +188,9 @@
     <Compile Include="Utility\CaptchaHelper.cs" />
     <Compile Include="Utility\DropDownHelper.cs" />
     <Compile Include="Utility\FileUploadHelper.cs" />
+    <Compile Include="Utility\GlobalSetupHelper.cs" />
+    <Compile Include="ViewModels\ImageResult.cs" />
+    <Compile Include="ViewModels\ImageUpload.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\bootstrap-theme.css" />
@@ -571,7 +574,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Context\" />
-    <Folder Include="ViewModels\" />
     <Folder Include="Views\Client\" />
   </ItemGroup>
   <ItemGroup>

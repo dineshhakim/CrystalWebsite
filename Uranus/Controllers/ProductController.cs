@@ -7,6 +7,7 @@ using Uranus.Domain.Entities;
 using Uranus.Service.Abstract;
 using Uranus.Service.Implementation;
 using Uranus.Utility;
+using Uranus.ViewModels;
 
 namespace Uranus.Controllers
 {
@@ -46,8 +47,8 @@ namespace Uranus.Controllers
 
         //
         // POST: /Product/Create
-        [HttpPost]
-        public ActionResult Create(Products model)
+        [HttpPost, ValidateInput(false)]
+        public ActionResult Create(Products model, FormCollection formcollection)
         {
             try
             {
@@ -63,6 +64,8 @@ namespace Uranus.Controllers
                     model.ImageUrl = filename;
                     ObjProductService.Add(model);
                     return RedirectToAction("Index");
+                     
+
                 }
                 else
                 {
@@ -73,6 +76,7 @@ namespace Uranus.Controllers
             {
                 return View();
             }
+            
         }
 
         //

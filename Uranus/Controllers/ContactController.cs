@@ -16,18 +16,22 @@ namespace Uranus.Controllers
             this.ObjContactUsService = objContactUsService;
 
         }
-        public ActionResult Index()
+        public ActionResult Index(string sortorder, string searchstring)
         {
+            ViewBag.NameSortParam = string.IsNullOrEmpty(sortorder) ? "name_desc" : "";
+            ViewBag.DateSortParam = sortorder == "Date" ? "date_desc" : "Date";
+
             return View();
         }
 
         [HttpPost]
         public ActionResult Index(ContactUs contactUs)
         {
+            
             if (ModelState.IsValid)
             {
                 ObjContactUsService.Add(contactUs);
-
+                
                 //  ModelState("ImageUpload Error", filename);
             }
             else

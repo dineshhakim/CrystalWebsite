@@ -18,13 +18,14 @@ namespace Uranus.Service
             registrar.RegisterType<IContactUsService, ContactUsService>();
             registrar.RegisterType<ITeamMemberService, TeamMemberService>();
             registrar.RegisterType<ICustomerService, CustomerService>();
-            registrar.RegisterType<ICompanyService, CompanyService>();
+            registrar.RegisterTypeUsingSetter<ICompanyService, CompanyService>();
+            
             registrar.RegisterType<IProductService, ProductService>();
             registrar.RegisterType<IOrderDemoService, OrderDemoService>();
             registrar.RegisterType<IUserService, UserService>();
             registrar.RegisterType<IFeaturesService, FeatureService>();
-
             registrar.RegisterType<IClientService, ClientService>();
+           
         }
     }
 }
